@@ -19,9 +19,4 @@ ratingBtnsContainer.addEventListener("click", function (e) {
     ratingCard.classList.add("hidden");
     thankYouCard.classList.remove("hidden");
   });
-
-  selectedBtn.addEventListener("click", function () {
-    console.log("clicked");
-    console.log(selectedBtn);
-  });
 });
