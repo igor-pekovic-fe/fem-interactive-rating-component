@@ -19,3 +19,9 @@ submitBtn.addEventListener("click", function () {
   ratingCard.classList.add("hidden");
   thankYouCard.classList.remove("hidden");
 });
+
+const newFeature = function () {
+  console.log("Welcome to the application!");
+};
+
+newFeature();
