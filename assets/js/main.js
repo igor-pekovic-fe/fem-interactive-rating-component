@@ -1,27 +1,27 @@
-const ratingCard = document.getElementById("rating-card");
-const thankYouCard = document.getElementById("thankyou-card");
-const submitBtn = document.getElementById("submit-btn");
-const count = document.querySelector(".count");
-const btns = document.querySelectorAll(".rating-card__button");
+const ratingCard = document.querySelector(".rating-card");
+const thankYouCard = document.querySelector(".thankyou-card");
+const submitBtn = document.querySelector(".rating-card__submit-btn");
+const ratingCount = document.querySelector(".count");
+const btn = document.querySelectorAll(".rating-card__button");
 const ratingBtnsContainer = document.querySelector(".rating-card__buttons");
 
-count.textContent = 0;
-
 ratingBtnsContainer.addEventListener("click", function (e) {
-  const clicked = e.target.closest(".rating-card__button");
-  if (!clicked) return;
-  btns.forEach((t) => t.classList.remove("active-btn"));
-  clicked.classList.add("active-btn");
-  count.textContent = clicked.textContent;
+  // Reset active button class on each click to avoid multiple active buttons
+  btn.forEach((btn) => btn.classList.remove("active-btn"));
+  // Select buttons in the button container
+  const selectedBtn = e.target.closest(".rating-card__button");
+  // Guard clause if clicking outside of button element
+  if (!selectedBtn) return;
+  // If a button is selected, toggle active class and activate Submit button
+  selectedBtn.classList.add("active-btn");
+  ratingCount.textContent = selectedBtn.textContent;
+  submitBtn.addEventListener("click", function () {
+    ratingCard.classList.add("hidden");
+    thankYouCard.classList.remove("hidden");
+  });
+
+  selectedBtn.addEventListener("click", function () {
+    console.log("clicked");
+    console.log(selectedBtn);
+  });
 });
-
-submitBtn.addEventListener("click", function () {
-  ratingCard.classList.add("hidden");
-  thankYouCard.classList.remove("hidden");
-});
-
-const newFeature = function () {
-  console.log("Welcome to the application!");
-};
-
-newFeature();
