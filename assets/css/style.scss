@@ -1,0 +1,167 @@
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&family=Outfit:wght@400;700&family=Overpass:wght@400;700&family=Plus+Jakarta+Sans:wght@500;800&family=Public+Sans:wght@300;400&family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+// Typography
+$font: "Overpass", "sans-serif";
+$fw-regular: 400;
+$fw-bold: 700;
+
+// Colors
+$white: hsl(0, 0%, 100%);
+$light-grey: hsl(217, 12%, 63%);
+$medium-grey: hsl(216, 12%, 54%);
+$dark-blue: hsl(213, 19%, 18%);
+$very-dark-blue: hsl(216, 12%, 8%);
+$orange: hsl(25, 97%, 53%);
+
+// Reset
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font;
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: $very-dark-blue;
+}
+
+.flex {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  width: 35rem;
+  background-color: $dark-blue;
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+.rating-card {
+  flex-direction: column;
+  position: relative;
+
+  &__star {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: $dark-blue;
+    margin-bottom: 1rem;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      transform: scale(0.4);
+    }
+  }
+
+  &__title {
+    color: $white;
+    font-size: 2rem;
+    font-weight: $fw-bold;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    color: $medium-grey;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__buttons {
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__button {
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: $dark-blue;
+    border-radius: 50%;
+    text-decoration: none;
+    border: none;
+    font-size: 1.4rem;
+    color: $white;
+    transition: background-color 0.1s ease-in-out;
+
+    &:hover {
+      background-color: $orange;
+    }
+  }
+
+  &__submit-btn {
+    font-family: inherit;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    // font-weight: $fw-bold;
+    letter-spacing: 2px;
+    color: $white;
+    background-color: $orange;
+    margin-bottom: 1rem;
+    padding-block: 1.3rem;
+    border: none;
+    border-radius: 30px;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+
+    &:hover {
+      background-color: $white;
+      color: $orange;
+    }
+  }
+}
+
+.active-btn {
+  background-color: $medium-grey;
+}
+
+.thankyou-card {
+  flex-direction: column;
+  align-items: center;
+
+  &__img {
+    margin-bottom: 1rem;
+    > img {
+      width: 14rem;
+      height: 10rem;
+      margin: 1rem;
+    }
+  }
+
+  &__selected-count {
+    font-size: 1.5rem;
+    color: $orange;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    color: $white;
+    font-size: 2rem;
+    font-weight: $fw-bold;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    text-align: center;
+    color: $medium-grey;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
