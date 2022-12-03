@@ -11,119 +11,136 @@ $white: hsl(0, 0%, 100%);
 $light-grey: hsl(217, 12%, 63%);
 $medium-grey: hsl(216, 12%, 54%);
 $dark-blue: hsl(213, 19%, 18%);
+$card-bg: hsl(215, 26%, 13%);
 $very-dark-blue: hsl(216, 12%, 8%);
+$main-bg: hsl(228, 11%, 9%);
 $orange: hsl(25, 97%, 53%);
 
 // Reset
-
 *,
 *::after,
 *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: $font;
 }
 
 html {
-  font-family: $font;
   font-size: 62.5%;
 }
 
 body {
   height: 100vh;
-  align-items: center;
+  align-content: center;
   justify-content: center;
-  background-color: $very-dark-blue;
+  background-color: $main-bg;
 }
 
+// Helper classes
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 .hidden {
   display: none;
 }
 
+// Styling
 .container {
-  width: 35rem;
-  background-color: $dark-blue;
-  padding: 2rem;
+  width: 37.5rem;
+  height: 37.5rem;
+  justify-content: space-between;
+  background-color: $card-bg;
   border-radius: 20px;
+  padding: 2.4rem;
 }
 
 .rating-card {
   flex-direction: column;
-  position: relative;
 
   &__star {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
     background-color: $dark-blue;
-    margin-bottom: 1rem;
+    border-radius: 50%;
+    margin-bottom: 2.5rem;
 
-    > img {
+    & img {
       width: 100%;
       height: 100%;
-      transform: scale(0.4);
+      transform: scale(0.35);
     }
   }
 
   &__title {
-    color: $white;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: $fw-bold;
-    margin-bottom: 1rem;
+    color: $white;
+    margin-bottom: 1.2rem;
   }
 
   &__description {
-    color: $medium-grey;
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    color: $medium-grey;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
   }
 
   &__buttons {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
   }
 
   &__button {
+    width: 4.5rem;
+    height: 4.5rem;
     align-items: center;
     justify-content: center;
-    width: 4rem;
-    height: 4rem;
     background-color: $dark-blue;
-    border-radius: 50%;
-    text-decoration: none;
     border: none;
-    font-size: 1.4rem;
-    color: $white;
-    transition: background-color 0.1s ease-in-out;
+    border-radius: 50%;
+
+    font-family: $font;
+    font-size: 1.5rem;
+    font-weight: $fw-bold;
+    color: $medium-grey;
+    text-decoration: none;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 
     &:hover {
+      color: $white;
       background-color: $orange;
+    }
+
+    &:focus {
+      color: $white;
     }
   }
 
   &__submit-btn {
-    font-family: inherit;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    // font-weight: $fw-bold;
-    letter-spacing: 2px;
-    color: $white;
+    height: 5rem;
     background-color: $orange;
-    margin-bottom: 1rem;
-    padding-block: 1.3rem;
+    font-family: $font;
+    font-size: 1.4rem;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     border: none;
     border-radius: 30px;
+    margin-bottom: 1rem;
+    padding-block: 1.3rem;
     transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 
     &:hover {
-      background-color: $white;
       color: $orange;
+      background-color: $white;
     }
   }
 }
@@ -135,33 +152,72 @@ body {
 .thankyou-card {
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 
   &__img {
-    margin-bottom: 1rem;
-    > img {
-      width: 14rem;
-      height: 10rem;
+    margin: 1rem;
+
+    & img {
+      width: 16rem;
+      height: 11rem;
       margin: 1rem;
     }
   }
 
   &__selected-count {
-    font-size: 1.5rem;
+    text-align: center;
+    background-color: $dark-blue;
+    font-size: 1.4rem;
     color: $orange;
+    letter-spacing: 0.5px;
+    border-radius: 30px;
+    padding-block: 0.75rem;
+    padding-inline: 1.75rem;
     margin-bottom: 1.5rem;
   }
 
   &__title {
+    font-size: 2.7rem;
     color: $white;
-    font-size: 2rem;
     font-weight: $fw-bold;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   &__description {
     text-align: center;
-    color: $medium-grey;
     font-size: 1.5rem;
+    color: $medium-grey;
+    line-height: 1.5;
+    padding-inline: 0.5rem;
     margin-bottom: 1.5rem;
+  }
+}
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  color: #fff;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    width: 34rem;
+    height: 36rem;
+    padding-bottom: 1.5rem;
+  }
+  .rating-card {
+    &__description {
+      font-size: 1.4rem;
+    }
+
+    &__submit-btn {
+      font-size: 1.3rem;
+    }
   }
 }
