@@ -13,48 +13,50 @@
     <title>Frontend Mentor | Interactive rating component</title>
     <script defer src="./assets/js/main.js"></script>
   </head>
-  <body class="grid">
-    <div class="container flex">
-      <div class="rating-card flex" id="rating-card">
-        <div class="rating-card__star">
-          <img src="./assets/images/icon-star.svg" alt="" />
+  <body>
+    <div class="container">
+      <div class="card-container flex">
+        <div class="rating-card flex">
+          <div class="rating-card__star">
+            <img src="./assets/images/icon-star.svg" alt="" />
+          </div>
+          <div class="rating-card__title">How did we do?</div>
+          <p class="rating-card__description">
+            Please let us know how we did with your support request. All
+            feedback is appreciated to help us improve our offering!
+          </p>
+          <div class="rating-card__buttons flex">
+            <button class="rating-card__button flex">1</button>
+            <button class="rating-card__button flex">2</button>
+            <button class="rating-card__button flex">3</button>
+            <button class="rating-card__button flex">4</button>
+            <button class="rating-card__button flex">5</button>
+          </div>
+          <button class="rating-card__submit-btn">Submit</button>
         </div>
-        <div class="rating-card__title">How did we do?</div>
-        <p class="rating-card__description">
-          Please let us know how we did with your support request. All feedback
-          is appreciated to help us improve our offering!
-        </p>
-        <div class="rating-card__buttons flex">
-          <button class="rating-card__button flex">1</button>
-          <button class="rating-card__button flex">2</button>
-          <button class="rating-card__button flex">3</button>
-          <button class="rating-card__button flex">4</button>
-          <button class="rating-card__button flex">5</button>
+        <div class="thankyou-card flex hidden">
+          <div class="thankyou-card__img">
+            <img src="./assets/images/illustration-thank-you.svg" alt="" />
+          </div>
+          <div class="thankyou-card__selected-count">
+            You selected <span class="count"></span> out of 5
+          </div>
+          <div class="thankyou-card__title">Thank you!</div>
+          <p class="thankyou-card__description">
+            We appreciate you taking the time to give a rating. If you ever need
+            more support, don’t hesitate to get in touch!
+          </p>
         </div>
-        <button class="rating-card__submit-btn" id="submit-btn">Submit</button>
       </div>
-
-      <div class="thankyou-card flex hidden" id="thankyou-card">
-        <div class="thankyou-card__img">
-          <img src="./assets/images/illustration-thank-you.svg" alt="" />
-        </div>
-        <div class="thankyou-card__selected-count">
-          You selected <span class="count"></span> out of 5
-        </div>
-        <div class="thankyou-card__title">Thank you!</div>
-        <p class="thankyou-card__description">
-          We appreciate you taking the time to give a rating. If you ever need
-          more support, don’t hesitate to get in touch!
-        </p>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://github.com/igor-pekovic-fe" target="_blank"
+          >Igor Peković</a
+        >.
       </div>
     </div>
   </body>
-  <div class="attribution">
-    Challenge by
-    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-      >Frontend Mentor</a
-    >. Coded by
-    <a href="https://github.com/igor-pekovic-fe" target="_blank">Igor Peković</a
-    >.
-  </div>
 </html>

@@ -30,20 +30,9 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  height: 100vh;
-  align-content: center;
-  justify-content: center;
-  background-color: $main-bg;
-}
-
 // Helper classes
 .flex {
   display: flex;
-}
-
-.grid {
-  display: grid;
 }
 
 .hidden {
@@ -52,9 +41,18 @@ body {
 
 // Styling
 .container {
+  background-color: $main-bg;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 37.5rem;
   height: 37.5rem;
-  justify-content: space-between;
   background-color: $card-bg;
   border-radius: 20px;
   padding: 2.4rem;
@@ -99,10 +97,10 @@ body {
   }
 
   &__button {
-    width: 4.5rem;
-    height: 4.5rem;
     align-items: center;
     justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
     background-color: $dark-blue;
     border: none;
     border-radius: 50%;

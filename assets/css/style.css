@@ -12,19 +12,8 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  height: 100vh;
-  align-content: center;
-  justify-content: center;
-  background-color: hsl(228deg, 11%, 9%);
-}
-
 .flex {
   display: flex;
-}
-
-.grid {
-  display: grid;
 }
 
 .hidden {
@@ -32,9 +21,18 @@ body {
 }
 
 .container {
+  background-color: hsl(228deg, 11%, 9%);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 37.5rem;
   height: 37.5rem;
-  justify-content: space-between;
   background-color: hsl(215deg, 26%, 13%);
   border-radius: 20px;
   padding: 2.4rem;
@@ -74,10 +72,10 @@ body {
   margin-bottom: 1.2rem;
 }
 .rating-card__button {
-  width: 4.5rem;
-  height: 4.5rem;
   align-items: center;
   justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
   background-color: hsl(213deg, 19%, 18%);
   border: none;
   border-radius: 50%;
