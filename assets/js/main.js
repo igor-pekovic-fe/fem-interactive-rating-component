@@ -2,12 +2,12 @@ const ratingCard = document.querySelector(".rating-card");
 const thankYouCard = document.querySelector(".thankyou-card");
 const submitBtn = document.querySelector(".rating-card__submit-btn");
 const ratingCount = document.querySelector(".count");
-const btn = document.querySelectorAll(".rating-card__button");
+const btnAll = document.querySelectorAll(".rating-card__button");
 const ratingBtnsContainer = document.querySelector(".rating-card__buttons");
 
 ratingBtnsContainer.addEventListener("click", function (e) {
   // Reset active button class on each click to avoid multiple active buttons
-  btn.forEach((btn) => btn.classList.remove("active-btn"));
+  btnAll.forEach((btn) => btn.classList.remove("active-btn"));
   // Select buttons in the button container
   const selectedBtn = e.target.closest(".rating-card__button");
   // Guard clause if clicking outside of button element
